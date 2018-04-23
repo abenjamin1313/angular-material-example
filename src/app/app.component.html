@@ -11,24 +11,20 @@
     </mat-toolbar-row>
   </mat-toolbar>
 
-  <mat-card class="example-card">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
+  <mat-card>
+    <mat-form-field>
+      <input matInput [(ngModel)]="answer" placeholder="Who has the best dev tutorials?">
+    </mat-form-field>
+  
+    <br>
+    
+    <button mat-raised-button (click)="showAnswer()">Answer me</button>
+    <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+  </mat-card>
+  
+  
+  <mat-card *ngIf="answerDisplay">
+    <h1>{{ answerDisplay }}, you're damn right.</h1>
   </mat-card>
 
 <router-outlet></router-outlet>
