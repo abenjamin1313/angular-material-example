@@ -9,6 +9,6 @@ export class AppComponent {
   public siteTitle: string;
 
     constructor() {
-      this.siteTitle = 'Home Title';
+      this.siteTitle = 'app';
     }
 }
