@@ -6,18 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  
-  answer: string = '';
-  answerDisplay: string = '';
-  showSpinner: boolean = false;
+  public siteTitle: string;
 
-  showAnswer() {
-    this.showSpinner = true;
-
-    setTimeout(() => {
-      this.answerDisplay = this.answer;
-      this.showSpinner = false;
-    }, 2000);
-  }
-
+    constructor() {
+      this.siteTitle = 'Home Title';
+    }
 }
